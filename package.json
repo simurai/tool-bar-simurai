@@ -1,9 +1,9 @@
 {
-  "name": "tool-bar-main",
+  "name": "tool-bar-simurai",
   "main": "./lib/tool-bar-main",
   "version": "0.0.9",
   "description": "Main tool bar",
-  "repository": "https://github.com/suda/tool-bar-main",
+  "repository": "https://github.com/simurai/tool-bar-simurai",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"

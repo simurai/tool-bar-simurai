@@ -90,11 +90,16 @@ module.exports =
       callback: "zen:toggle"
       icon:     "broadcast"
 
+    @toolBar.addButton
+      tooltip:  "Screenshot"
+      callback: "custom:screenshot"
+      icon:     "android-camera"
+      iconset: "ion"
+
 
 
 
     if atom.inDevMode()
-      @toolBar.addSpacer()
       @toolBar.addSpacer()
 
       @toolBar.addButton

@@ -96,6 +96,12 @@ module.exports =
       icon:     "android-camera"
       iconset: "ion"
 
+    @toolBar.addButton
+      tooltip:  "Run Specs"
+      callback: "window:run-package-specs"
+      icon:     "bug"
+      iconset: "ion"
+
 
 
 
@@ -103,7 +109,13 @@ module.exports =
       @toolBar.addSpacer()
 
       @toolBar.addButton
+        tooltip: 'Reload All Styles'
+        callback: 'dev-live-reload:reload-all'
+        icon: 'refresh'
+        iconset: 'ion'
+
+      @toolBar.addButton
         tooltip: 'Reload Window'
         callback: 'window:reload'
-        icon: 'refresh'
+        icon: 'power'
         iconset: 'ion'

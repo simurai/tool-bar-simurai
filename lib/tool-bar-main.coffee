@@ -10,13 +10,57 @@ module.exports =
   consumeToolBar: (toolBar) ->
     @toolBar = toolBar 'main-tool-bar'
 
+    @toolBar.addButton
+      tooltip:  "Open in Tower"
+      callback: "open-project-in-tower:open"
+      icon:     "android-navigate"
+      iconset:  'ion'
 
+    @toolBar.addButton
+      tooltip:  "Open in Terminal"
+      callback: "open-terminal-here:open-root"
+      icon:     "terminal"
+
+    @toolBar.addSpacer()
 
 
     @toolBar.addButton
-      tooltip:  "Projects [ctrl-cmd-p]"
+      tooltip:  "Project+ [ctrl-cmd-p]"
       callback: "project-plus:toggle-project-finder"
-      icon:     "file-directory"
+      icon:     "arrow-swap"
+      iconset:  "ion"
+
+    @toolBar.addButton
+      tooltip:  "Project+ Next"
+      callback: "project-plus:open-previous-recently-used-project"
+      icon:     "arrow-left-c"
+      iconset: "ion"
+
+    @toolBar.addButton
+      tooltip:  "Project+ Next"
+      callback: "project-plus:open-next-recently-used-project"
+      icon:     "arrow-right-c"
+      iconset: "ion"
+
+    @toolBar.addButton
+      tooltip:  "Project+ Save"
+      callback: "project-plus:save"
+      icon:     "plus-round"
+      iconset: "ion"
+
+    @toolBar.addButton
+      tooltip:  "Project+ Remove"
+      callback: "project-plus:remove"
+      icon:     "close-round"
+      iconset: "ion"
+
+    @toolBar.addSpacer()
+
+    @toolBar.addButton
+      tooltip:  "Project Manager"
+      callback: "project-manager:list-projects"
+      icon:     "briefcase"
+      iconset: "ion"
 
     @toolBar.addButton
       tooltip:  "Open Dev"
@@ -39,13 +83,9 @@ module.exports =
 
     @toolBar.addButton
       tooltip:  "Git: Panel"
-      callback: "git:view-and-commit-changes"
-      icon:     "git-commit"
+      callback: "git:toggle-git-panel"
+      icon:     "diff"
 
-    @toolBar.addButton
-      tooltip:  "Git: Refresh"
-      callback: "git:refresh-status"
-      icon:     "sync"
 
 
     @toolBar.addSpacer()
@@ -57,14 +97,21 @@ module.exports =
       icon:     "paintcan"
 
     @toolBar.addButton
+      tooltip:  "Styleguide"
+      callback: "styleguide:show"
+      icon:     "pencil"
+
+    @toolBar.addButton
       tooltip:  "Styles"
       callback: "application:open-your-stylesheet"
       icon:     "ruby"
 
     @toolBar.addButton
-      tooltip:  "Styleguide"
-      callback: "styleguide:show"
-      icon:     "pencil"
+      tooltip:  "Snippets"
+      callback: "application:open-your-snippets"
+      icon:     "puzzle"
+
+
 
 
     @toolBar.addSpacer()
@@ -111,11 +158,11 @@ module.exports =
       @toolBar.addButton
         tooltip: 'Reload All Styles'
         callback: 'dev-live-reload:reload-all'
-        icon: 'refresh'
+        icon: 'android-color-palette'
         iconset: 'ion'
 
       @toolBar.addButton
         tooltip: 'Reload Window'
         callback: 'window:reload'
-        icon: 'power'
+        icon: 'refresh'
         iconset: 'ion'

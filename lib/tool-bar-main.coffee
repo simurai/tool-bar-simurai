@@ -31,18 +31,6 @@ module.exports =
       iconset:  "ion"
 
     @toolBar.addButton
-      tooltip:  "Project+ Next"
-      callback: "project-plus:open-previous-recently-used-project"
-      icon:     "arrow-left-c"
-      iconset: "ion"
-
-    @toolBar.addButton
-      tooltip:  "Project+ Next"
-      callback: "project-plus:open-next-recently-used-project"
-      icon:     "arrow-right-c"
-      iconset: "ion"
-
-    @toolBar.addButton
       tooltip:  "Project+ Save"
       callback: "project-plus:save"
       icon:     "plus-round"
@@ -92,8 +80,14 @@ module.exports =
 
 
     @toolBar.addButton
+      tooltip:  "Switch Themes"
+      callback: "switcheroo:toggle"
+      icon:     "contrast"
+      iconset:  "ion"
+
+    @toolBar.addButton
       tooltip:  "Themes"
-      callback: "settings-view:change-themes"
+      callback: "fuzzy-theme-switcher:toggle"
       icon:     "paintcan"
 
     @toolBar.addButton
@@ -121,6 +115,12 @@ module.exports =
       tooltip:  "Markdown"
       callback: "markdown-preview:toggle"
       icon:     "markdown"
+
+    @toolBar.addButton
+      tooltip:  "Notes"
+      callback: "nvatom:toggle"
+      icon:     "clipboard"
+      iconset:  "ion"
 
     @toolBar.addButton
       tooltip:  "Toggle Soft Wrap"

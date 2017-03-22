@@ -11,6 +11,14 @@ module.exports =
     @toolBar = toolBar 'main-tool-bar'
 
     @toolBar.addButton
+      tooltip:  "Close"
+      callback: "window:close"
+      icon:     "close-round"
+      iconset:  'ion'
+
+    @toolBar.addSpacer()
+
+    @toolBar.addButton
       tooltip:  "Open in Tower"
       callback: "open-project-in-tower:open"
       icon:     "android-navigate"

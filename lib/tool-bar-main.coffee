@@ -19,6 +19,24 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
+      tooltip:  "Project+ [ctrl-cmd-p]"
+      callback: "project-plus:toggle-project-finder"
+      icon:     "arrow-swap"
+      iconset:  "ion"
+
+    # @toolBar.addButton
+    #   tooltip:  "Project+ Save"
+    #   callback: "project-plus:save"
+    #   icon:     "plus-round"
+    #   iconset: "ion"
+    #
+    # @toolBar.addButton
+    #   tooltip:  "Project+ Remove"
+    #   callback: "project-plus:remove"
+    #   icon:     "close-round"
+    #   iconset: "ion"
+
+    @toolBar.addButton
       tooltip:  "Open in Tower"
       callback: "open-project-in-tower:open"
       icon:     "android-navigate"
@@ -28,35 +46,6 @@ module.exports =
       tooltip:  "Open in Terminal"
       callback: "open-terminal-here:open-root"
       icon:     "terminal"
-
-    @toolBar.addSpacer()
-
-
-    @toolBar.addButton
-      tooltip:  "Project+ [ctrl-cmd-p]"
-      callback: "project-plus:toggle-project-finder"
-      icon:     "arrow-swap"
-      iconset:  "ion"
-
-    @toolBar.addButton
-      tooltip:  "Project+ Save"
-      callback: "project-plus:save"
-      icon:     "plus-round"
-      iconset: "ion"
-
-    @toolBar.addButton
-      tooltip:  "Project+ Remove"
-      callback: "project-plus:remove"
-      icon:     "close-round"
-      iconset: "ion"
-
-    @toolBar.addSpacer()
-
-    @toolBar.addButton
-      tooltip:  "Project Manager"
-      callback: "project-manager:list-projects"
-      icon:     "briefcase"
-      iconset: "ion"
 
     @toolBar.addButton
       tooltip:  "Open Dev"
@@ -73,15 +62,29 @@ module.exports =
       icon:     "octoface"
 
     @toolBar.addButton
+      tooltip:  "Quick Commit"
+      callback: "context-git:commit-all"
+      icon:     "git-commit"
+
+    # @toolBar.addButton
+    #   tooltip:  "Quick Git"
+    #   callback: "g:quick-git"
+    #   icon:     "three-bars"
+
+    @toolBar.addButton
       tooltip:  "Branch compare"
       callback: "open-on-github:branch-compare"
       icon:     "git-pull-request"
 
     @toolBar.addButton
-      tooltip:  "Git: Panel"
-      callback: "git:toggle-git-panel"
-      icon:     "diff"
+      tooltip:  "Git History"
+      callback: "git-history:show-file-history"
+      icon:     "clock"
 
+    @toolBar.addButton
+      tooltip:  "GitHub"
+      callback: "github:toggle-git-panel"
+      icon:     "diff"
 
 
     @toolBar.addSpacer()

@@ -37,10 +37,9 @@ module.exports =
     #   iconset: "ion"
 
     @toolBar.addButton
-      tooltip:  "Open in Tower"
-      callback: "open-project-in-tower:open"
-      icon:     "android-navigate"
-      iconset:  'ion'
+      tooltip:  "Open Dev"
+      callback: "application:open-dev"
+      icon:     "color-mode"
 
     @toolBar.addButton
       tooltip:  "Open in Terminal"
@@ -48,9 +47,15 @@ module.exports =
       icon:     "terminal"
 
     @toolBar.addButton
-      tooltip:  "Open Dev"
-      callback: "application:open-dev"
-      icon:     "color-mode"
+      tooltip:  "Open in Tower"
+      callback: "open-project-in-tower:open"
+      icon:     "android-navigate"
+      iconset:  'ion'
+
+    @toolBar.addButton
+      tooltip:  "Open in GitHub Desktop"
+      callback: "open-in-github-app:open"
+      icon:     "octoface"
 
 
     @toolBar.addSpacer()
@@ -59,7 +64,7 @@ module.exports =
     @toolBar.addButton
       tooltip:  "Open on GitHub"
       callback: "open-on-github:file"
-      icon:     "octoface"
+      icon:     "mark-github"
 
     @toolBar.addButton
       tooltip:  "Quick Commit"

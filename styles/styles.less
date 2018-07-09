@@ -1,0 +1,46 @@
+@import "ui-variables";
+
+// Tool Bar --------------------------------
+
+
+// Hide tabs when tool-bar is visible
+
+atom-dock.left:nth-child(2) {
+  .tab-bar {
+    display: none;
+  }
+}
+
+
+.tool-bar {
+  &.tool-bar.tool-bar {
+    &.gutter-top::before,
+    &.gutter-bottom::after {
+      display: none; // remove shadow
+    }
+  }
+  button.tool-bar-btn {
+    margin: 0;
+    height: 16px * 3;
+    min-height: 16px * 3;
+    border-radius: 0;
+    border: none;
+    cursor: default;
+  }
+  button.tool-bar-btn:focus,
+  button.tool-bar-btn:hover {
+    color: @text-color;
+    background: none;
+    box-shadow: none;
+  }
+  button.tool-bar-btn:focus,
+  button.tool-bar-btn:active {
+    background: @base-border-color;
+  }
+  &.tool-bar-16px.tool-bar-vertical {
+    width: 16px * 4;
+    .tool-bar-spacer {
+      width: auto;
+    }
+  }
+}

@@ -11,30 +11,26 @@ module.exports =
     @toolBar = toolBar 'main-tool-bar'
 
     @toolBar.addButton
-      tooltip:  "Close"
-      callback: "window:close"
-      icon:     "close-round"
-      iconset:  'ion'
-
-    @toolBar.addSpacer()
+      tooltip:  "Project"
+      callback: "tree-view:toggle"
+      icon:     "file-directory"
 
     @toolBar.addButton
-      tooltip:  "Project+ [ctrl-cmd-p]"
-      callback: "project-plus:toggle-project-finder"
-      icon:     "arrow-swap"
-      iconset:  "ion"
+      tooltip:  "Git"
+      callback: "github:toggle-git-tab-focus"
+      icon:     "diff"
 
-    # @toolBar.addButton
-    #   tooltip:  "Project+ Save"
-    #   callback: "project-plus:save"
-    #   icon:     "plus-round"
-    #   iconset: "ion"
-    #
-    # @toolBar.addButton
-    #   tooltip:  "Project+ Remove"
-    #   callback: "project-plus:remove"
-    #   icon:     "close-round"
-    #   iconset: "ion"
+    @toolBar.addButton
+      tooltip:  "GitHub"
+      callback: "github:toggle-github-tab-focus"
+      icon:     "octoface"
+
+
+
+    @toolBar.addSpacer()
+    @toolBar.addSpacer()
+
+
 
     @toolBar.addButton
       tooltip:  "Open Dev"
@@ -55,66 +51,30 @@ module.exports =
     @toolBar.addButton
       tooltip:  "Open in GitHub Desktop"
       callback: "open-in-github-app:open"
-      icon:     "octoface"
-
-
-    @toolBar.addSpacer()
-
+      icon:     "mark-github"
 
     @toolBar.addButton
       tooltip:  "Open on GitHub"
       callback: "open-on-github:file"
-      icon:     "mark-github"
+      icon:     "link"
 
-    @toolBar.addButton
-      tooltip:  "Quick Commit"
-      callback: "context-git:commit-all"
-      icon:     "git-commit"
-
-    # @toolBar.addButton
-    #   tooltip:  "Quick Git"
-    #   callback: "g:quick-git"
-    #   icon:     "three-bars"
-
-    @toolBar.addButton
-      tooltip:  "Branch compare"
-      callback: "open-on-github:branch-compare"
-      icon:     "git-pull-request"
-
-    @toolBar.addButton
-      tooltip:  "Git History"
-      callback: "git-history:show-file-history"
-      icon:     "clock"
-
-    @toolBar.addButton
-      tooltip:  "GitHub"
-      callback: "github:toggle-git-panel"
-      icon:     "diff"
 
 
     @toolBar.addSpacer()
 
 
-    @toolBar.addButton
-      tooltip:  "Switch Themes"
-      callback: "switcheroo:toggle"
-      icon:     "contrast"
-      iconset:  "ion"
-
-    @toolBar.addButton
-      tooltip:  "Themes"
-      callback: "fuzzy-theme-switcher:toggle"
-      icon:     "paintcan"
 
     @toolBar.addButton
       tooltip:  "Styleguide"
       callback: "styleguide:show"
-      icon:     "pencil"
+      icon:     "bowtie"
+      iconset: 'ion'
 
     @toolBar.addButton
       tooltip:  "Styles"
       callback: "application:open-your-stylesheet"
-      icon:     "ruby"
+      icon: 'android-color-palette'
+      iconset: 'ion'
 
     @toolBar.addButton
       tooltip:  "Snippets"
@@ -123,8 +83,8 @@ module.exports =
 
 
 
-
     @toolBar.addSpacer()
+
 
 
     @toolBar.addButton
@@ -133,31 +93,15 @@ module.exports =
       icon:     "markdown"
 
     @toolBar.addButton
-      tooltip:  "Notes"
-      callback: "nvatom:toggle"
-      icon:     "clipboard"
-      iconset:  "ion"
-
-    @toolBar.addButton
       tooltip:  "Toggle Soft Wrap"
       callback: "editor:toggle-soft-wrap"
       icon:     "no-newline"
 
-    @toolBar.addButton
-      tooltip:  "Fullscreen"
-      callback: "window:toggle-full-screen"
-      icon:     "screen-full"
 
-    @toolBar.addButton
-      tooltip:  "Zen"
-      callback: "zen:toggle"
-      icon:     "broadcast"
 
-    @toolBar.addButton
-      tooltip:  "Screenshot"
-      callback: "custom:screenshot"
-      icon:     "android-camera"
-      iconset: "ion"
+    @toolBar.addSpacer()
+
+
 
     @toolBar.addButton
       tooltip:  "Run Specs"
@@ -167,18 +111,17 @@ module.exports =
 
 
 
-
     if atom.inDevMode()
       @toolBar.addSpacer()
 
       @toolBar.addButton
-        tooltip: 'Reload All Styles'
-        callback: 'dev-live-reload:reload-all'
-        icon: 'android-color-palette'
-        iconset: 'ion'
+        tooltip:  "Screenshot"
+        callback: "custom:screenshot"
+        icon:     "android-camera"
+        iconset: "ion"
 
       @toolBar.addButton
-        tooltip: 'Reload Window'
-        callback: 'window:reload'
+        tooltip: 'Reload All Styles'
+        callback: 'dev-live-reload:reload-all'
         icon: 'refresh'
         iconset: 'ion'

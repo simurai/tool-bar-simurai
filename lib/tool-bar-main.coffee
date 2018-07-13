@@ -51,11 +51,16 @@ module.exports =
     @toolBar.addButton
       tooltip:  "Open in GitHub Desktop"
       callback: "open-in-github-app:open"
-      icon:     "mark-github"
+      icon:     "device-desktop"
 
     @toolBar.addButton
       tooltip:  "Open on GitHub"
       callback: "open-on-github:file"
+      icon:     "mark-github"
+
+    @toolBar.addButton
+      tooltip:  "Open GitHub URL"
+      callback: "github:open-issue-or-pull-request"
       icon:     "link"
 
 

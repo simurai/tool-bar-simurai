@@ -16,8 +16,13 @@ module.exports =
       icon:     "file-directory"
 
     @toolBar.addButton
-      tooltip:  "Git"
-      callback: "github:toggle-git-tab-focus"
+      tooltip:  "Quick Commit"
+      callback: "custom:quick-commit"
+      icon:     "git-commit"
+
+    @toolBar.addButton
+      tooltip:  "Changes"
+      callback: "github:view-unstaged-changes-for-current-file"
       icon:     "diff"
 
     @toolBar.addButton

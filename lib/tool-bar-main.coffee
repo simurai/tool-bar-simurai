@@ -17,17 +17,12 @@ module.exports =
 
     @toolBar.addButton
       tooltip:  "Quick Commit"
-      callback: "custom:quick-commit"
+      callback: "github:toggle-git-tab"
       icon:     "git-commit"
 
     @toolBar.addButton
-      tooltip:  "Changes"
-      callback: "github:view-unstaged-changes-for-current-file"
-      icon:     "diff"
-
-    @toolBar.addButton
       tooltip:  "GitHub"
-      callback: "github:toggle-github-tab-focus"
+      callback: "github:toggle-github-tab"
       icon:     "octoface"
 
 

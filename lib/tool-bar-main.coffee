@@ -8,7 +8,7 @@ module.exports =
   serialize: ->
 
   consumeToolBar: (toolBar) ->
-    @toolBar = toolBar 'main-tool-bar'
+    @toolBar = toolBar 'main-tool-bar' # Workflows -----------------------------------------------
 
     @toolBar.addButton
       tooltip:  "Project"
@@ -16,26 +16,18 @@ module.exports =
       icon:     "file-directory"
 
     @toolBar.addButton
-      tooltip:  "Quick Commit"
-      callback: "github:toggle-git-tab"
+      tooltip:  "Split diff"
+      callback: "split-diff:toggle"
+      icon:     "diff"
+
+    @toolBar.addButton
+      tooltip:  "Open in GitHub Desktop"
+      callback: "open-in-github-app:open"
       icon:     "git-commit"
 
-    @toolBar.addButton
-      tooltip:  "GitHub"
-      callback: "github:toggle-github-tab"
-      icon:     "octoface"
 
+    @toolBar.addSpacer() # Open in -----------------------------------------------
 
-
-    @toolBar.addSpacer()
-    @toolBar.addSpacer()
-
-
-
-    @toolBar.addButton
-      tooltip:  "Open Dev"
-      callback: "application:open-dev"
-      icon:     "color-mode"
 
     @toolBar.addButton
       tooltip:  "Open in Terminal"
@@ -48,47 +40,14 @@ module.exports =
       icon:     "android-navigate"
       iconset:  'ion'
 
-    @toolBar.addButton
-      tooltip:  "Open in GitHub Desktop"
-      callback: "open-in-github-app:open"
-      icon:     "device-desktop"
 
     @toolBar.addButton
-      tooltip:  "Open on GitHub"
+      tooltip:  "Open on GitHub (file)"
       callback: "open-on-github:file"
       icon:     "mark-github"
 
-    @toolBar.addButton
-      tooltip:  "Open GitHub URL"
-      callback: "github:open-issue-or-pull-request"
-      icon:     "link"
 
-
-
-    @toolBar.addSpacer()
-
-
-
-    @toolBar.addButton
-      tooltip:  "Styleguide"
-      callback: "styleguide:show"
-      icon:     "bowtie"
-      iconset: 'ion'
-
-    @toolBar.addButton
-      tooltip:  "Styles"
-      callback: "application:open-your-stylesheet"
-      icon: 'android-color-palette'
-      iconset: 'ion'
-
-    @toolBar.addButton
-      tooltip:  "Snippets"
-      callback: "application:open-your-snippets"
-      icon:     "puzzle"
-
-
-
-    @toolBar.addSpacer()
+    @toolBar.addSpacer() # Format/mode -----------------------------------------------
 
 
 
@@ -103,21 +62,24 @@ module.exports =
       icon:     "no-newline"
 
 
-
-    @toolBar.addSpacer()
-
+    @toolBar.addSpacer() # Dev Mode -----------------------------------------------
 
 
     @toolBar.addButton
-      tooltip:  "Run Specs"
-      callback: "window:run-package-specs"
-      icon:     "bug"
-      iconset: "ion"
-
+      tooltip:  "Open Dev"
+      callback: "application:open-dev"
+      icon:     "color-mode"
 
 
     if atom.inDevMode()
+
       @toolBar.addSpacer()
+
+      @toolBar.addButton
+        tooltip:  "Styleguide"
+        callback: "styleguide:show"
+        icon:     "bowtie"
+        iconset: 'ion'
 
       @toolBar.addButton
         tooltip:  "Screenshot"
@@ -130,3 +92,9 @@ module.exports =
         callback: 'dev-live-reload:reload-all'
         icon: 'refresh'
         iconset: 'ion'
+
+      @toolBar.addButton
+        tooltip:  "Run Specs"
+        callback: "window:run-package-specs"
+        icon:     "bug"
+        iconset: "ion"
